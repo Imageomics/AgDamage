@@ -1,0 +1,375 @@
+{
+  "cohort": {
+    "images": 380,
+    "positive_assertion_patterns": [
+      {
+        "chlorosis": false,
+        "epinasty": false,
+        "foliar_distortion": false,
+        "images": 173,
+        "necrosis": false
+      },
+      {
+        "chlorosis": false,
+        "epinasty": true,
+        "foliar_distortion": false,
+        "images": 36,
+        "necrosis": false
+      },
+      {
+        "chlorosis": false,
+        "epinasty": false,
+        "foliar_distortion": true,
+        "images": 11,
+        "necrosis": false
+      },
+      {
+        "chlorosis": true,
+        "epinasty": false,
+        "foliar_distortion": false,
+        "images": 106,
+        "necrosis": false
+      },
+      {
+        "chlorosis": true,
+        "epinasty": false,
+        "foliar_distortion": false,
+        "images": 24,
+        "necrosis": true
+      },
+      {
+        "chlorosis": false,
+        "epinasty": false,
+        "foliar_distortion": false,
+        "images": 30,
+        "necrosis": true
+      }
+    ],
+    "pots": 78,
+    "rule": "every preferred 50 cm image"
+  },
+  "figure": {
+    "panel_display_ranges": {
+      "cropped/bioclip-2.5/UMAP": {
+        "x": [
+          -0.5,
+          0.5
+        ],
+        "y": [
+          -0.2957456307003388,
+          0.2957456307003388
+        ]
+      },
+      "cropped/bioclip-2.5/t-SNE": {
+        "x": [
+          -0.5,
+          0.5
+        ],
+        "y": [
+          -0.30222586763808523,
+          0.30222586763808523
+        ]
+      },
+      "cropped/bioclip-2/UMAP": {
+        "x": [
+          -0.47522483258859693,
+          0.47522483258859693
+        ],
+        "y": [
+          -0.5,
+          0.5
+        ]
+      },
+      "cropped/bioclip-2/t-SNE": {
+        "x": [
+          -0.2723160334980659,
+          0.2723160334980659
+        ],
+        "y": [
+          -0.5,
+          0.5
+        ]
+      },
+      "cropped/bioclip/UMAP": {
+        "x": [
+          -0.5,
+          0.5
+        ],
+        "y": [
+          -0.4175309104662512,
+          0.4175309104662512
+        ]
+      },
+      "cropped/bioclip/t-SNE": {
+        "x": [
+          -0.5,
+          0.5
+        ],
+        "y": [
+          -0.34973006384702465,
+          0.34973006384702465
+        ]
+      },
+      "cropped/dinov3-vit7b16/UMAP": {
+        "x": [
+          -0.5,
+          0.49999999999999994
+        ],
+        "y": [
+          -0.43301475148851254,
+          0.43301475148851254
+        ]
+      },
+      "cropped/dinov3-vit7b16/t-SNE": {
+        "x": [
+          -0.5,
+          0.5
+        ],
+        "y": [
+          -0.4329117273166266,
+          0.4329117273166266
+        ]
+      },
+      "full/bioclip-2.5/UMAP": {
+        "x": [
+          -0.3284564205738148,
+          0.3284564205738148
+        ],
+        "y": [
+          -0.5,
+          0.5
+        ]
+      },
+      "full/bioclip-2.5/t-SNE": {
+        "x": [
+          -0.5,
+          0.5
+        ],
+        "y": [
+          -0.30010914015595386,
+          0.30010914015595386
+        ]
+      },
+      "full/bioclip-2/UMAP": {
+        "x": [
+          -0.5,
+          0.5
+        ],
+        "y": [
+          -0.33441587791083377,
+          0.33441587791083377
+        ]
+      },
+      "full/bioclip-2/t-SNE": {
+        "x": [
+          -0.5,
+          0.5
+        ],
+        "y": [
+          -0.15105828223980902,
+          0.15105828223980902
+        ]
+      },
+      "full/bioclip/UMAP": {
+        "x": [
+          -0.43257283687227116,
+          0.43257283687227116
+        ],
+        "y": [
+          -0.5,
+          0.5
+        ]
+      },
+      "full/bioclip/t-SNE": {
+        "x": [
+          -0.5,
+          0.5
+        ],
+        "y": [
+          -0.37562269412484073,
+          0.37562269412484073
+        ]
+      },
+      "full/dinov3-vit7b16/UMAP": {
+        "x": [
+          -0.5,
+          0.5
+        ],
+        "y": [
+          -0.33945585527183025,
+          0.3394558552718304
+        ]
+      },
+      "full/dinov3-vit7b16/t-SNE": {
+        "x": [
+          -0.3908001691094329,
+          0.3908001691094329
+        ],
+        "y": [
+          -0.5,
+          0.5
+        ]
+      },
+      "segmented/bioclip-2.5/UMAP": {
+        "x": [
+          -0.5,
+          0.5
+        ],
+        "y": [
+          -0.23993715675837685,
+          0.23993715675837685
+        ]
+      },
+      "segmented/bioclip-2.5/t-SNE": {
+        "x": [
+          -0.38977545239080863,
+          0.38977545239080863
+        ],
+        "y": [
+          -0.5,
+          0.5
+        ]
+      },
+      "segmented/bioclip-2/UMAP": {
+        "x": [
+          -0.5,
+          0.5
+        ],
+        "y": [
+          -0.16012166161273608,
+          0.16012166161273608
+        ]
+      },
+      "segmented/bioclip-2/t-SNE": {
+        "x": [
+          -0.5,
+          0.5
+        ],
+        "y": [
+          -0.4005644759620562,
+          0.4005644759620562
+        ]
+      },
+      "segmented/bioclip/UMAP": {
+        "x": [
+          -0.5,
+          0.5
+        ],
+        "y": [
+          -0.24486926007555088,
+          0.24486926007555088
+        ]
+      },
+      "segmented/bioclip/t-SNE": {
+        "x": [
+          -0.5,
+          0.5
+        ],
+        "y": [
+          -0.4367563615294269,
+          0.4367563615294269
+        ]
+      },
+      "segmented/dinov3-vit7b16/UMAP": {
+        "x": [
+          -0.5,
+          0.5
+        ],
+        "y": [
+          -0.25273025882861727,
+          0.25273025882861727
+        ]
+      },
+      "segmented/dinov3-vit7b16/t-SNE": {
+        "x": [
+          -0.3520633902412688,
+          0.3520633902412688
+        ],
+        "y": [
+          -0.5,
+          0.5
+        ]
+      }
+    },
+    "traces": 168
+  },
+  "generated_at": "2026-08-20T15:08:47.980459+00:00",
+  "glyph": {
+    "colors": {
+      "chlorosis": "#E69F00",
+      "epinasty": "#0072B2",
+      "foliar_distortion": "#009E73",
+      "necrosis": "#D55E00"
+    },
+    "quadrant_angles_degrees": {
+      "chlorosis": [
+        90.0,
+        180.0
+      ],
+      "epinasty": [
+        180.0,
+        270.0
+      ],
+      "foliar_distortion": [
+        270.0,
+        360.0
+      ],
+      "necrosis": [
+        0.0,
+        90.0
+      ]
+    },
+    "radius_in_normalized_coordinates": 0.016,
+    "semantics": "colored quadrant = asserted positive; white = unknown"
+  },
+  "inputs": {
+    "coordinate_source": {
+      "path": "reports/treated_vs_untreated_logistic/projection_coordinates.csv",
+      "sha256": "e15e60d4f6862f4818cdea65d2e69b0d795536a0e3b88d074e30648f8d448ec2"
+    },
+    "metadata": {
+      "path": "data/metadata.csv",
+      "sha256": "ab7b4c42972d1e571d813618da7dc91bff30c4164240b74a752a8b493b68e8e9"
+    }
+  },
+  "outputs": {
+    "README.md": "aa3d5fd59e5bcbbee6c7cc11c3abac8be76013a6b282adf872a58d05122df717",
+    "positive_assertion_projections_50cm.html": "1ac607c9058913ec54efb1b03c441abd6717273d1d703e7a0d9029bc6c63855f",
+    "projection_coordinates.csv": "af2c42a9bb1ed062b1df8a55026d50dd65cdc680d2478f09d13a71cca1567dff"
+  },
+  "panels": {
+    "coordinate_normalization": "center by panel bounding-box midpoint; divide both axes by the larger panel span",
+    "methods": [
+      "t-SNE",
+      "UMAP"
+    ],
+    "models": [
+      "bioclip",
+      "bioclip-2",
+      "bioclip-2.5",
+      "dinov3-vit7b16"
+    ],
+    "representations": [
+      "full",
+      "cropped",
+      "segmented"
+    ]
+  },
+  "schema": "agdamage.positive_assertion_embedding_projection",
+  "schema_version": 1,
+  "software": {
+    "numpy": "2.5.2",
+    "pandas": "3.0.5",
+    "plotly": "6.9.0",
+    "python": "3.12.11"
+  },
+  "thumbnails": {
+    "jpeg_quality": 65,
+    "representations": [
+      "full",
+      "cropped",
+      "segmented"
+    ],
+    "width_px": 180
+  }
+}

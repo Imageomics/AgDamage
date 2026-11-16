@@ -1,0 +1,93 @@
+{
+  "arms": {
+    "models": [
+      "bioclip",
+      "bioclip-2",
+      "bioclip-2.5",
+      "dinov3-vit7b16"
+    ],
+    "representations": [
+      "full",
+      "cropped",
+      "segmented"
+    ]
+  },
+  "classifier": {
+    "C": 1.0,
+    "folds": 5,
+    "penalty": "L2",
+    "primary_metric": "pooled-fold F1 at logit >= 0",
+    "repeats": 20,
+    "solver": "liblinear",
+    "support_images_per_class": [
+      1,
+      2,
+      5,
+      10,
+      20,
+      40,
+      60
+    ],
+    "type": "sklearn.linear_model.LogisticRegression"
+  },
+  "cohort": {
+    "observations": 380,
+    "pots": 78,
+    "rule": "every preferred 50 cm image",
+    "treated": 207,
+    "untreated": 173
+  },
+  "generated_at": "2026-08-20T16:45:32.192229+00:00",
+  "inputs": {
+    "embedding_bundles": {
+      "cropped__bioclip-2.5.npz": "e7675f638438885348fc45c6c62ceaf4542607a83bbb98fe1719f1bbe8c16a3e",
+      "cropped__bioclip-2.npz": "62c1c49467363119e8adddfe20bb3050185f700a06e0357f6e5bdea496822ff8",
+      "cropped__bioclip.npz": "97ad61a3bbea2f3371e686f2d1aec86f2ef2e470a57ec1b0ad86db2b606c26fa",
+      "cropped__dinov3-vit7b16.npz": "da78274e367e7a96a3afb579f0ab9c0013f5b9298eea39f0a081db2993704076",
+      "original__bioclip-2.5.npz": "71080b86fe1559398b02dc523f1fec33c2b52951f4da749d36ac299099eeb910",
+      "original__bioclip-2.npz": "9f10c6d642d946c7927309c39680525196f418c0e3b77c45cd2cf346a6b52bf9",
+      "original__bioclip.npz": "295074802d6f5c526d6a767417e86bef2574bf0748e8d99d32736c039f90d354",
+      "original__dinov3-vit7b16.npz": "c1817ab169400b112962e075f198d8ba665d5c795c69c1d7927d10d73e4031fc",
+      "plant_only__bioclip-2.5.npz": "3cd956709f029e302bf55391944a913269caabdc7720421940cb4b44f7bfa9c8",
+      "plant_only__bioclip-2.npz": "a71dbbdfbbf41363ba33452645f2d8966fe3c941fe4d1306ff5d9ca61eb348a7",
+      "plant_only__bioclip.npz": "b1fedc5b218dcda9b1f5f743cb6296a0072cfffeb3ba399382164097c7199545",
+      "plant_only__dinov3-vit7b16.npz": "feb86da8c45c9c916be22754cf9ff377a7e226713daec8e997f9b536751264b1"
+    },
+    "metadata": {
+      "path": "data/metadata.csv",
+      "sha256": "ab7b4c42972d1e571d813618da7dc91bff30c4164240b74a752a8b493b68e8e9"
+    }
+  },
+  "outputs": {
+    "README.md": "3bb848370c5d6c5dc4a9bc25472c78253318c02754953382e7a58151dfdf74a7",
+    "classifier_metric_summary.csv": "ce83026b3422a2918e56009e910006d25de7430fe9fc2eb5d4139f96d02842c7",
+    "classifier_performance_vs_support.png": "4104f391fa5f6e2627aaf6872314c86e98a932d73a661db22a9b56247ce3ddb5",
+    "classifier_trials.csv": "823eb3ab376f6b920b7000cc79ab1257689f0f3e38a79bcfae4ade766a32b7c3",
+    "evaluation_plan.json": "58ed131aa9c31451e45446ff18b05b9cca65f4eae32b67d83fdbee1ec850e803"
+  },
+  "schema": "agdamage.treated_vs_untreated_matched_strategy",
+  "schema_version": 1,
+  "software": {
+    "matplotlib": "3.11.1",
+    "numpy": "2.5.2",
+    "pandas": "3.0.5",
+    "python": "3.12.11",
+    "scikit_learn": "1.9.0"
+  },
+  "strategy_match": {
+    "reference": "reports/symptom_vs_untreated_logistic",
+    "shared_features": [
+      "five stratified pot-held-out folds",
+      "balanced nested support draws",
+      "pot-diverse sampling",
+      "twenty support repeats",
+      "F1 at logit >= 0 pooled over folds within repeat",
+      "10th-90th percentile across repeats"
+    ]
+  },
+  "target": {
+    "false": "source_label == healthy_untreated",
+    "interpretation": "image-time treatment status, not symptom absence",
+    "true": "source_label is a positive symptom label"
+  }
+}

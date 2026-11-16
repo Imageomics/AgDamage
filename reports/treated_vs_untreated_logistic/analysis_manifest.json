@@ -1,0 +1,112 @@
+{
+  "arms": {
+    "heights_cm": [
+      50
+    ],
+    "models": [
+      "BioCLIP",
+      "BioCLIP 2",
+      "BioCLIP 2.5",
+      "DINOv3 ViT-7B/16"
+    ],
+    "representations": [
+      "full",
+      "cropped",
+      "segmented"
+    ]
+  },
+  "classifier": {
+    "C": 1.0,
+    "folds": 6,
+    "penalty": "L2",
+    "primary_metric": "balanced_accuracy",
+    "repeats": 20,
+    "solver": "liblinear",
+    "support_images_per_class": [
+      1,
+      2,
+      5,
+      10,
+      20,
+      40,
+      60,
+      100,
+      140
+    ],
+    "type": "sklearn.linear_model.LogisticRegression"
+  },
+  "cohort": {
+    "dates": [
+      "2026-05-07",
+      "2026-05-08",
+      "2026-05-11",
+      "2026-05-15",
+      "2026-05-22",
+      "2026-05-29"
+    ],
+    "observations": 380,
+    "pots": 78,
+    "rule": "every preferred 50 cm image across all available dates",
+    "treated_observations": 207,
+    "untreated_observations": 173
+  },
+  "generated_at": "2026-08-19T21:03:54.071114+00:00",
+  "inputs": {
+    "embedding_bundles": {
+      "cropped__bioclip-2.5.npz": "e7675f638438885348fc45c6c62ceaf4542607a83bbb98fe1719f1bbe8c16a3e",
+      "cropped__bioclip-2.npz": "62c1c49467363119e8adddfe20bb3050185f700a06e0357f6e5bdea496822ff8",
+      "cropped__bioclip.npz": "97ad61a3bbea2f3371e686f2d1aec86f2ef2e470a57ec1b0ad86db2b606c26fa",
+      "cropped__dinov3-vit7b16.npz": "da78274e367e7a96a3afb579f0ab9c0013f5b9298eea39f0a081db2993704076",
+      "original__bioclip-2.5.npz": "71080b86fe1559398b02dc523f1fec33c2b52951f4da749d36ac299099eeb910",
+      "original__bioclip-2.npz": "9f10c6d642d946c7927309c39680525196f418c0e3b77c45cd2cf346a6b52bf9",
+      "original__bioclip.npz": "295074802d6f5c526d6a767417e86bef2574bf0748e8d99d32736c039f90d354",
+      "original__dinov3-vit7b16.npz": "c1817ab169400b112962e075f198d8ba665d5c795c69c1d7927d10d73e4031fc",
+      "plant_only__bioclip-2.5.npz": "3cd956709f029e302bf55391944a913269caabdc7720421940cb4b44f7bfa9c8",
+      "plant_only__bioclip-2.npz": "a71dbbdfbbf41363ba33452645f2d8966fe3c941fe4d1306ff5d9ca61eb348a7",
+      "plant_only__bioclip.npz": "b1fedc5b218dcda9b1f5f743cb6296a0072cfffeb3ba399382164097c7199545",
+      "plant_only__dinov3-vit7b16.npz": "feb86da8c45c9c916be22754cf9ff377a7e226713daec8e997f9b536751264b1"
+    },
+    "metadata": {
+      "path": "data/metadata.csv",
+      "sha256": "ab7b4c42972d1e571d813618da7dc91bff30c4164240b74a752a8b493b68e8e9"
+    }
+  },
+  "outputs": {
+    "README.md": "b984bf7d57aa0d74f84ec7040f8badbbe29dfd0e7a94314ecfc7550b8a9235c0",
+    "classifier_performance_vs_support.png": "07fa2340eb311a8fee144c8fa7310c9de1ada7280100673cb24eaa33146f1a0f",
+    "classifier_trials.csv": "eb947d8a5c020d8e566a219ee21c233afbc42d48c35080d90b40da397edd81a6",
+    "evaluation_plan.json": "f4ace9e9f4a1480f868e14a7bbfcab762638131c7a455d34fb0f195da4dfc44c",
+    "projection_coordinates.csv": "e15e60d4f6862f4818cdea65d2e69b0d795536a0e3b88d074e30648f8d448ec2",
+    "projections_50cm_cropped.html": "551c93214fc1d88fff5c7222e58fdeffaa158de112ab9627299bb8e7a58b28f7",
+    "projections_50cm_full.html": "a6375f3ce33fec7513243bf6fcbf00e94acaafb3ff65226ae866ab49a8e2ff93",
+    "projections_50cm_segmented.html": "dd16bd35fa2132c44818bdb8676eab785c2f20f2ecaf514e8c83b45fa8c3779b"
+  },
+  "projections": {
+    "methods": [
+      "t-SNE",
+      "UMAP"
+    ],
+    "metric": "cosine",
+    "seed": 42,
+    "tsne_perplexity": 30,
+    "umap_min_dist": 0.1,
+    "umap_neighbors": 15
+  },
+  "schema": "agdamage.treated_vs_untreated_logistic_analysis",
+  "schema_version": 1,
+  "software": {
+    "matplotlib": "3.11.1",
+    "numpy": "2.5.2",
+    "pandas": "3.0.5",
+    "plotly": "6.9.0",
+    "python": "3.12.11",
+    "scikit_learn": "1.9.0",
+    "umap_learn": "0.5.12"
+  },
+  "target": {
+    "column": "herbicide_treated",
+    "false": "source_label == healthy_untreated",
+    "true": "source_label is a positive symptom label",
+    "unit": "image at capture time"
+  }
+}

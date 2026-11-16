@@ -1,0 +1,604 @@
+{
+  "all_image_scores": {
+    "class_weight": "balanced",
+    "control_percentile_reference": "out-of-fold untreated-reference logits",
+    "method": "pot-held-out out-of-fold logistic regression",
+    "rows": 4560
+  },
+  "arms": {
+    "heights_cm": [
+      50
+    ],
+    "models": [
+      "BioCLIP",
+      "BioCLIP 2",
+      "BioCLIP 2.5",
+      "DINOv3 ViT-7B/16"
+    ],
+    "representations": [
+      "full",
+      "cropped",
+      "segmented"
+    ]
+  },
+  "cohort": {
+    "class_counts": {
+      "chlorosis": {
+        "control_reference": 173,
+        "positive": 130,
+        "unknown": 77
+      },
+      "epinasty": {
+        "control_reference": 173,
+        "positive": 36,
+        "unknown": 171
+      },
+      "foliar_distortion": {
+        "control_reference": 173,
+        "positive": 11,
+        "unknown": 196
+      },
+      "necrosis": {
+        "control_reference": 173,
+        "positive": 54,
+        "unknown": 153
+      }
+    },
+    "dates": [
+      "2026-05-07",
+      "2026-05-08",
+      "2026-05-11",
+      "2026-05-15",
+      "2026-05-22",
+      "2026-05-29"
+    ],
+    "observations": 380,
+    "pots": 78,
+    "rule": "every preferred 50 cm image across all dates"
+  },
+  "few_shot_classifier": {
+    "C": 1.0,
+    "folds": 5,
+    "loss": "binary cross-entropy (log loss)",
+    "penalty": "L2",
+    "primary_metric": "f1 at logit >= 0",
+    "repeats": 20,
+    "solver": "liblinear",
+    "support_images_per_class": {
+      "chlorosis": [
+        1,
+        2,
+        5,
+        10,
+        20,
+        40,
+        60
+      ],
+      "epinasty": [
+        1,
+        2,
+        5,
+        10,
+        20,
+        28
+      ],
+      "foliar_distortion": [
+        1,
+        2,
+        5,
+        7
+      ],
+      "necrosis": [
+        1,
+        2,
+        5,
+        10,
+        20,
+        40,
+        42
+      ]
+    },
+    "threshold_free_metrics": [
+      "average_precision",
+      "roc_auc"
+    ],
+    "type": "sklearn.linear_model.LogisticRegression"
+  },
+  "final_classifiers": {
+    "classifier": {
+      "C": 1.0,
+      "class_weight": "balanced",
+      "logit_formula": "features @ coef.T + intercept",
+      "penalty": "L2",
+      "solver": "liblinear",
+      "type": "sklearn.linear_model.LogisticRegression"
+    },
+    "classifiers": [
+      {
+        "feature_dimension": 512,
+        "key": "full__bioclip__chlorosis",
+        "model_key": "bioclip",
+        "n_control_reference": 173,
+        "n_positive": 130,
+        "representation": "full",
+        "symptom": "chlorosis"
+      },
+      {
+        "feature_dimension": 512,
+        "key": "full__bioclip__necrosis",
+        "model_key": "bioclip",
+        "n_control_reference": 173,
+        "n_positive": 54,
+        "representation": "full",
+        "symptom": "necrosis"
+      },
+      {
+        "feature_dimension": 512,
+        "key": "full__bioclip__epinasty",
+        "model_key": "bioclip",
+        "n_control_reference": 173,
+        "n_positive": 36,
+        "representation": "full",
+        "symptom": "epinasty"
+      },
+      {
+        "feature_dimension": 512,
+        "key": "full__bioclip__foliar_distortion",
+        "model_key": "bioclip",
+        "n_control_reference": 173,
+        "n_positive": 11,
+        "representation": "full",
+        "symptom": "foliar_distortion"
+      },
+      {
+        "feature_dimension": 768,
+        "key": "full__bioclip-2__chlorosis",
+        "model_key": "bioclip-2",
+        "n_control_reference": 173,
+        "n_positive": 130,
+        "representation": "full",
+        "symptom": "chlorosis"
+      },
+      {
+        "feature_dimension": 768,
+        "key": "full__bioclip-2__necrosis",
+        "model_key": "bioclip-2",
+        "n_control_reference": 173,
+        "n_positive": 54,
+        "representation": "full",
+        "symptom": "necrosis"
+      },
+      {
+        "feature_dimension": 768,
+        "key": "full__bioclip-2__epinasty",
+        "model_key": "bioclip-2",
+        "n_control_reference": 173,
+        "n_positive": 36,
+        "representation": "full",
+        "symptom": "epinasty"
+      },
+      {
+        "feature_dimension": 768,
+        "key": "full__bioclip-2__foliar_distortion",
+        "model_key": "bioclip-2",
+        "n_control_reference": 173,
+        "n_positive": 11,
+        "representation": "full",
+        "symptom": "foliar_distortion"
+      },
+      {
+        "feature_dimension": 1024,
+        "key": "full__bioclip-2.5__chlorosis",
+        "model_key": "bioclip-2.5",
+        "n_control_reference": 173,
+        "n_positive": 130,
+        "representation": "full",
+        "symptom": "chlorosis"
+      },
+      {
+        "feature_dimension": 1024,
+        "key": "full__bioclip-2.5__necrosis",
+        "model_key": "bioclip-2.5",
+        "n_control_reference": 173,
+        "n_positive": 54,
+        "representation": "full",
+        "symptom": "necrosis"
+      },
+      {
+        "feature_dimension": 1024,
+        "key": "full__bioclip-2.5__epinasty",
+        "model_key": "bioclip-2.5",
+        "n_control_reference": 173,
+        "n_positive": 36,
+        "representation": "full",
+        "symptom": "epinasty"
+      },
+      {
+        "feature_dimension": 1024,
+        "key": "full__bioclip-2.5__foliar_distortion",
+        "model_key": "bioclip-2.5",
+        "n_control_reference": 173,
+        "n_positive": 11,
+        "representation": "full",
+        "symptom": "foliar_distortion"
+      },
+      {
+        "feature_dimension": 4096,
+        "key": "full__dinov3-vit7b16__chlorosis",
+        "model_key": "dinov3-vit7b16",
+        "n_control_reference": 173,
+        "n_positive": 130,
+        "representation": "full",
+        "symptom": "chlorosis"
+      },
+      {
+        "feature_dimension": 4096,
+        "key": "full__dinov3-vit7b16__necrosis",
+        "model_key": "dinov3-vit7b16",
+        "n_control_reference": 173,
+        "n_positive": 54,
+        "representation": "full",
+        "symptom": "necrosis"
+      },
+      {
+        "feature_dimension": 4096,
+        "key": "full__dinov3-vit7b16__epinasty",
+        "model_key": "dinov3-vit7b16",
+        "n_control_reference": 173,
+        "n_positive": 36,
+        "representation": "full",
+        "symptom": "epinasty"
+      },
+      {
+        "feature_dimension": 4096,
+        "key": "full__dinov3-vit7b16__foliar_distortion",
+        "model_key": "dinov3-vit7b16",
+        "n_control_reference": 173,
+        "n_positive": 11,
+        "representation": "full",
+        "symptom": "foliar_distortion"
+      },
+      {
+        "feature_dimension": 512,
+        "key": "cropped__bioclip__chlorosis",
+        "model_key": "bioclip",
+        "n_control_reference": 173,
+        "n_positive": 130,
+        "representation": "cropped",
+        "symptom": "chlorosis"
+      },
+      {
+        "feature_dimension": 512,
+        "key": "cropped__bioclip__necrosis",
+        "model_key": "bioclip",
+        "n_control_reference": 173,
+        "n_positive": 54,
+        "representation": "cropped",
+        "symptom": "necrosis"
+      },
+      {
+        "feature_dimension": 512,
+        "key": "cropped__bioclip__epinasty",
+        "model_key": "bioclip",
+        "n_control_reference": 173,
+        "n_positive": 36,
+        "representation": "cropped",
+        "symptom": "epinasty"
+      },
+      {
+        "feature_dimension": 512,
+        "key": "cropped__bioclip__foliar_distortion",
+        "model_key": "bioclip",
+        "n_control_reference": 173,
+        "n_positive": 11,
+        "representation": "cropped",
+        "symptom": "foliar_distortion"
+      },
+      {
+        "feature_dimension": 768,
+        "key": "cropped__bioclip-2__chlorosis",
+        "model_key": "bioclip-2",
+        "n_control_reference": 173,
+        "n_positive": 130,
+        "representation": "cropped",
+        "symptom": "chlorosis"
+      },
+      {
+        "feature_dimension": 768,
+        "key": "cropped__bioclip-2__necrosis",
+        "model_key": "bioclip-2",
+        "n_control_reference": 173,
+        "n_positive": 54,
+        "representation": "cropped",
+        "symptom": "necrosis"
+      },
+      {
+        "feature_dimension": 768,
+        "key": "cropped__bioclip-2__epinasty",
+        "model_key": "bioclip-2",
+        "n_control_reference": 173,
+        "n_positive": 36,
+        "representation": "cropped",
+        "symptom": "epinasty"
+      },
+      {
+        "feature_dimension": 768,
+        "key": "cropped__bioclip-2__foliar_distortion",
+        "model_key": "bioclip-2",
+        "n_control_reference": 173,
+        "n_positive": 11,
+        "representation": "cropped",
+        "symptom": "foliar_distortion"
+      },
+      {
+        "feature_dimension": 1024,
+        "key": "cropped__bioclip-2.5__chlorosis",
+        "model_key": "bioclip-2.5",
+        "n_control_reference": 173,
+        "n_positive": 130,
+        "representation": "cropped",
+        "symptom": "chlorosis"
+      },
+      {
+        "feature_dimension": 1024,
+        "key": "cropped__bioclip-2.5__necrosis",
+        "model_key": "bioclip-2.5",
+        "n_control_reference": 173,
+        "n_positive": 54,
+        "representation": "cropped",
+        "symptom": "necrosis"
+      },
+      {
+        "feature_dimension": 1024,
+        "key": "cropped__bioclip-2.5__epinasty",
+        "model_key": "bioclip-2.5",
+        "n_control_reference": 173,
+        "n_positive": 36,
+        "representation": "cropped",
+        "symptom": "epinasty"
+      },
+      {
+        "feature_dimension": 1024,
+        "key": "cropped__bioclip-2.5__foliar_distortion",
+        "model_key": "bioclip-2.5",
+        "n_control_reference": 173,
+        "n_positive": 11,
+        "representation": "cropped",
+        "symptom": "foliar_distortion"
+      },
+      {
+        "feature_dimension": 4096,
+        "key": "cropped__dinov3-vit7b16__chlorosis",
+        "model_key": "dinov3-vit7b16",
+        "n_control_reference": 173,
+        "n_positive": 130,
+        "representation": "cropped",
+        "symptom": "chlorosis"
+      },
+      {
+        "feature_dimension": 4096,
+        "key": "cropped__dinov3-vit7b16__necrosis",
+        "model_key": "dinov3-vit7b16",
+        "n_control_reference": 173,
+        "n_positive": 54,
+        "representation": "cropped",
+        "symptom": "necrosis"
+      },
+      {
+        "feature_dimension": 4096,
+        "key": "cropped__dinov3-vit7b16__epinasty",
+        "model_key": "dinov3-vit7b16",
+        "n_control_reference": 173,
+        "n_positive": 36,
+        "representation": "cropped",
+        "symptom": "epinasty"
+      },
+      {
+        "feature_dimension": 4096,
+        "key": "cropped__dinov3-vit7b16__foliar_distortion",
+        "model_key": "dinov3-vit7b16",
+        "n_control_reference": 173,
+        "n_positive": 11,
+        "representation": "cropped",
+        "symptom": "foliar_distortion"
+      },
+      {
+        "feature_dimension": 512,
+        "key": "segmented__bioclip__chlorosis",
+        "model_key": "bioclip",
+        "n_control_reference": 173,
+        "n_positive": 130,
+        "representation": "segmented",
+        "symptom": "chlorosis"
+      },
+      {
+        "feature_dimension": 512,
+        "key": "segmented__bioclip__necrosis",
+        "model_key": "bioclip",
+        "n_control_reference": 173,
+        "n_positive": 54,
+        "representation": "segmented",
+        "symptom": "necrosis"
+      },
+      {
+        "feature_dimension": 512,
+        "key": "segmented__bioclip__epinasty",
+        "model_key": "bioclip",
+        "n_control_reference": 173,
+        "n_positive": 36,
+        "representation": "segmented",
+        "symptom": "epinasty"
+      },
+      {
+        "feature_dimension": 512,
+        "key": "segmented__bioclip__foliar_distortion",
+        "model_key": "bioclip",
+        "n_control_reference": 173,
+        "n_positive": 11,
+        "representation": "segmented",
+        "symptom": "foliar_distortion"
+      },
+      {
+        "feature_dimension": 768,
+        "key": "segmented__bioclip-2__chlorosis",
+        "model_key": "bioclip-2",
+        "n_control_reference": 173,
+        "n_positive": 130,
+        "representation": "segmented",
+        "symptom": "chlorosis"
+      },
+      {
+        "feature_dimension": 768,
+        "key": "segmented__bioclip-2__necrosis",
+        "model_key": "bioclip-2",
+        "n_control_reference": 173,
+        "n_positive": 54,
+        "representation": "segmented",
+        "symptom": "necrosis"
+      },
+      {
+        "feature_dimension": 768,
+        "key": "segmented__bioclip-2__epinasty",
+        "model_key": "bioclip-2",
+        "n_control_reference": 173,
+        "n_positive": 36,
+        "representation": "segmented",
+        "symptom": "epinasty"
+      },
+      {
+        "feature_dimension": 768,
+        "key": "segmented__bioclip-2__foliar_distortion",
+        "model_key": "bioclip-2",
+        "n_control_reference": 173,
+        "n_positive": 11,
+        "representation": "segmented",
+        "symptom": "foliar_distortion"
+      },
+      {
+        "feature_dimension": 1024,
+        "key": "segmented__bioclip-2.5__chlorosis",
+        "model_key": "bioclip-2.5",
+        "n_control_reference": 173,
+        "n_positive": 130,
+        "representation": "segmented",
+        "symptom": "chlorosis"
+      },
+      {
+        "feature_dimension": 1024,
+        "key": "segmented__bioclip-2.5__necrosis",
+        "model_key": "bioclip-2.5",
+        "n_control_reference": 173,
+        "n_positive": 54,
+        "representation": "segmented",
+        "symptom": "necrosis"
+      },
+      {
+        "feature_dimension": 1024,
+        "key": "segmented__bioclip-2.5__epinasty",
+        "model_key": "bioclip-2.5",
+        "n_control_reference": 173,
+        "n_positive": 36,
+        "representation": "segmented",
+        "symptom": "epinasty"
+      },
+      {
+        "feature_dimension": 1024,
+        "key": "segmented__bioclip-2.5__foliar_distortion",
+        "model_key": "bioclip-2.5",
+        "n_control_reference": 173,
+        "n_positive": 11,
+        "representation": "segmented",
+        "symptom": "foliar_distortion"
+      },
+      {
+        "feature_dimension": 4096,
+        "key": "segmented__dinov3-vit7b16__chlorosis",
+        "model_key": "dinov3-vit7b16",
+        "n_control_reference": 173,
+        "n_positive": 130,
+        "representation": "segmented",
+        "symptom": "chlorosis"
+      },
+      {
+        "feature_dimension": 4096,
+        "key": "segmented__dinov3-vit7b16__necrosis",
+        "model_key": "dinov3-vit7b16",
+        "n_control_reference": 173,
+        "n_positive": 54,
+        "representation": "segmented",
+        "symptom": "necrosis"
+      },
+      {
+        "feature_dimension": 4096,
+        "key": "segmented__dinov3-vit7b16__epinasty",
+        "model_key": "dinov3-vit7b16",
+        "n_control_reference": 173,
+        "n_positive": 36,
+        "representation": "segmented",
+        "symptom": "epinasty"
+      },
+      {
+        "feature_dimension": 4096,
+        "key": "segmented__dinov3-vit7b16__foliar_distortion",
+        "model_key": "dinov3-vit7b16",
+        "n_control_reference": 173,
+        "n_positive": 11,
+        "representation": "segmented",
+        "symptom": "foliar_distortion"
+      }
+    ],
+    "schema": "agdamage.final_50cm_symptom_logistic_coefficients",
+    "schema_version": 1
+  },
+  "generated_at": "2026-08-19T21:43:39.328124+00:00",
+  "inputs": {
+    "embedding_bundles": {
+      "cropped__bioclip-2.5.npz": "e7675f638438885348fc45c6c62ceaf4542607a83bbb98fe1719f1bbe8c16a3e",
+      "cropped__bioclip-2.npz": "62c1c49467363119e8adddfe20bb3050185f700a06e0357f6e5bdea496822ff8",
+      "cropped__bioclip.npz": "97ad61a3bbea2f3371e686f2d1aec86f2ef2e470a57ec1b0ad86db2b606c26fa",
+      "cropped__dinov3-vit7b16.npz": "da78274e367e7a96a3afb579f0ab9c0013f5b9298eea39f0a081db2993704076",
+      "original__bioclip-2.5.npz": "71080b86fe1559398b02dc523f1fec33c2b52951f4da749d36ac299099eeb910",
+      "original__bioclip-2.npz": "9f10c6d642d946c7927309c39680525196f418c0e3b77c45cd2cf346a6b52bf9",
+      "original__bioclip.npz": "295074802d6f5c526d6a767417e86bef2574bf0748e8d99d32736c039f90d354",
+      "original__dinov3-vit7b16.npz": "c1817ab169400b112962e075f198d8ba665d5c795c69c1d7927d10d73e4031fc",
+      "plant_only__bioclip-2.5.npz": "3cd956709f029e302bf55391944a913269caabdc7720421940cb4b44f7bfa9c8",
+      "plant_only__bioclip-2.npz": "a71dbbdfbbf41363ba33452645f2d8966fe3c941fe4d1306ff5d9ca61eb348a7",
+      "plant_only__bioclip.npz": "b1fedc5b218dcda9b1f5f743cb6296a0072cfffeb3ba399382164097c7199545",
+      "plant_only__dinov3-vit7b16.npz": "feb86da8c45c9c916be22754cf9ff377a7e226713daec8e997f9b536751264b1"
+    },
+    "metadata": {
+      "path": "data/metadata.csv",
+      "sha256": "ab7b4c42972d1e571d813618da7dc91bff30c4164240b74a752a8b493b68e8e9"
+    }
+  },
+  "outputs": {
+    "README.md": "c5d95e7ee320c0e362e0064aae19b539d99767469607d9f6c88b646c31fd0e6f",
+    "classifier_metric_summary.csv": "d7391804893b6c505ebffc881f1ead21714f5e644d12114c1653f9af4866c58b",
+    "classifier_performance_vs_support.png": "4d8127ba4675996dce10f11f104202c1dbf4240116eeae3c010ec41a8e22b3f7",
+    "classifier_trials.csv": "0e37a25fef47990d6281d811904a004126f7cf5819ac93da227493d1507c4980",
+    "evaluation_plan.json": "1841c83b17fcd4dd27f12e6d25863c5c4e65c8ca2f0a5c4e778bdc45934d1025",
+    "final_classifiers.npz": "b4b99da5528d28d0daa4c7c967c1d2a322a3427fc0501d60f1543f9ccafcb0c8",
+    "image_symptom_scores.csv": "019825d4c082e4885b5f0e5ec8ba1c6a23991effa6bb633103409aa5eefdbc71"
+  },
+  "schema": "agdamage.symptom_vs_untreated_logistic_analysis",
+  "schema_version": 1,
+  "software": {
+    "matplotlib": "3.11.1",
+    "numpy": "2.5.2",
+    "pandas": "3.0.5",
+    "python": "3.12.11",
+    "scikit_learn": "1.9.0"
+  },
+  "target": {
+    "control_reference": "source_label == healthy_untreated",
+    "positive": "the symptom column is explicitly true",
+    "symptoms": [
+      "chlorosis",
+      "necrosis",
+      "epinasty",
+      "foliar_distortion"
+    ],
+    "unit": "image at capture time",
+    "unknown": "all other rows; excluded from training and evaluation"
+  }
+}

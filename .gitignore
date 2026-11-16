@@ -219,3 +219,26 @@ __marimo__/
 
 # Mac System
 .DS_Store
+
+# Local reference papers / PDFs
+literature/
+
+# Local/generated datasets (retain the layout documentation)
+data/*
+!data/README.md
+
+# SLURM logs
+slurm/logs/
+
+# Large generated report artifacts. Keep method READMEs, manifests, compact
+# summaries, and static figures under version control.
+reports/**/*.html
+reports/**/classifier_trials.csv
+reports/**/evaluation_plan.json
+reports/**/projection_coordinates.csv
+reports/**/projection_coordinates_and_predictions.csv
+reports/**/prediction_scores.csv
+reports/**/image_symptom_scores.csv
+reports/**/final_classifiers.npz
+reports/misc/
+reports/report_out_inputs/
